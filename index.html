@@ -1,55 +1,73 @@
-<form action="save_appointment.php" method="post">
-  <input
-    type="text"
-    id="name"
-    name="full_name"
-    placeholder="Enter your name"
-    required
-  />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinic - Book Appointment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <input
-    type="email"
-    id="email"
-    name="email"
-    placeholder="Enter your email"
-    required
-  />
+  <body>
+    <div class="appointment-container">
+      <h1>Book an Appointment</h1>
+      <p>Fill in your details to schedule your visit.</p>
 
-  <input
-    type="tel"
-    id="phone"
-    name="phone"
-    placeholder="Enter phone number"
-    required
-  />
+      <form action="save_appointment.php" method="post">
+        <input
+          type="text"
+          id="name"
+          name="full_name"
+          placeholder="Enter your name"
+          required
+        />
 
-  <select id="department" name="department" required>
-    <option value="">Select Department</option>
-    <option value="General Checkup">General Checkup</option>
-    <option value="Cardiology">Cardiology</option>
-    <option value="Dental Care">Dental Care</option>
-    <option value="Neurology">Neurology</option>
-    <option value="Pediatrics">Pediatrics</option>
-  </select>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
 
-  <input type="date" id="date" name="appointment_date" required />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Enter phone number"
+          required
+        />
 
-  <textarea
-    id="message"
-    name="message"
-    rows="4"
-    placeholder="Write your message..."
-  ></textarea>
+        <select id="department" name="department" required>
+          <option value="">Select Department</option>
+          <option value="General Checkup">General Checkup</option>
+          <option value="Cardiology">Cardiology</option>
+          <option value="Dental Care">Dental Care</option>
+          <option value="Neurology">Neurology</option>
+          <option value="Pediatrics">Pediatrics</option>
+        </select>
 
-  <button type="submit" class="submit-btn">Book Appointment</button>
-</form>
-<script>
-  const dateInput = document.getElementById("date");
+        <input type="date" id="date" name="appointment_date" required />
 
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Write your message..."
+        ></textarea>
 
-  dateInput.min = `${year}-${month}-${day}`;
-</script>
+        <button type="submit" class="submit-btn">Book Appointment</button>
+      </form>
+    </div>
+
+    <script>
+      const dateInput = document.getElementById("date");
+
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const day = String(today.getDate()).padStart(2, "0");
+
+      dateInput.min = `${year}-${month}-${day}`;
+    </script>
+  </body>
+</html>

@@ -1032,3 +1032,88 @@ a {
     background-color: #7952AA;
     transform: translateY(-4px);
 }
+
+/* Page styling */
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f5ff;
+    color: #30254a;
+}
+
+/* Appointment form container */
+.appointment-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(100, 70, 140, 0.15);
+}
+
+/* Heading */
+.appointment-container h1 {
+    text-align: center;
+    color: #7950a8;
+    margin-top: 0;
+}
+
+.appointment-container p {
+    text-align: center;
+    color: #6d6478;
+    margin-bottom: 25px;
+}
+
+/* Form layout */
+.appointment-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs, dropdown and message */
+.appointment-container input,
+.appointment-container select,
+.appointment-container textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    border: 1px solid #d8c8eb;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #30254a;
+}
+
+/* Focus effect */
+.appointment-container input:focus,
+.appointment-container select:focus,
+.appointment-container textarea:focus {
+    outline: none;
+    border-color: #9164c5;
+    box-shadow: 0 0 5px rgba(145, 100, 197, 0.25);
+}
+
+/* Message field */
+.appointment-container textarea {
+    resize: vertical;
+}
+
+/* Submit button */
+.appointment-container .submit-btn {
+    padding: 14px;
+    background-color: #9164c5;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.appointment-container .submit-btn:hover {
+    background-color: #7950a8;
+}
+
