@@ -1,31 +1,55 @@
-
 <form action="save_appointment.php" method="post">
+  <input
+    type="text"
+    id="name"
+    name="full_name"
+    placeholder="Enter your name"
+    required
+  />
 
-    <input type="text" id="name" name="full_name"
-           placeholder="Enter your name" required>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Enter your email"
+    required
+  />
 
-    <input type="email" id="email" name="email"
-           placeholder="Enter your email" required>
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="Enter phone number"
+    required
+  />
 
-    <input type="tel" id="phone" name="phone"
-           placeholder="Enter phone number" required>
+  <select id="department" name="department" required>
+    <option value="">Select Department</option>
+    <option value="General Checkup">General Checkup</option>
+    <option value="Cardiology">Cardiology</option>
+    <option value="Dental Care">Dental Care</option>
+    <option value="Neurology">Neurology</option>
+    <option value="Pediatrics">Pediatrics</option>
+  </select>
 
-    <select id="department" name="department" required>
-        <option value="">Select Department</option>
-        <option value="General Checkup">General Checkup</option>
-        <option value="Cardiology">Cardiology</option>
-        <option value="Dental Care">Dental Care</option>
-        <option value="Neurology">Neurology</option>
-        <option value="Pediatrics">Pediatrics</option>
-    </select>
+  <input type="date" id="date" name="appointment_date" required />
 
-    <input type="date" id="date" name="appointment_date" required>
+  <textarea
+    id="message"
+    name="message"
+    rows="4"
+    placeholder="Write your message..."
+  ></textarea>
 
-    <textarea id="message" name="message"
-              rows="4" placeholder="Write your message..."></textarea>
-
-    <button type="submit" class="submit-btn">
-        Book Appointment
-    </button>
-
+  <button type="submit" class="submit-btn">Book Appointment</button>
 </form>
+<script>
+  const dateInput = document.getElementById("date");
+
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+
+  dateInput.min = `${year}-${month}-${day}`;
+</script>
