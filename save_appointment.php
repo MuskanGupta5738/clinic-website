@@ -35,6 +35,15 @@ if (
     exit("Please select a valid appointment date.");
 }
 
+// date_default_timezone_set('Asia/Kolkata');
+
+// $today = date('Y-m-d');
+
+// if ($appointment_date < $today) {
+//     exit("Past dates are not allowed. Please select today or a future date.");
+// }
+
+
 $sql = "INSERT INTO appointments
         (full_name, email, phone, department, appointment_date, message)
         VALUES (?, ?, ?, ?, ?, ?)";
